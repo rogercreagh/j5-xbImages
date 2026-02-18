@@ -13,7 +13,7 @@ if (!window.Joomla) {
 }
 
 const { covers } = Joomla.getOptions('mod_xbimages.vars');
-const { delay } = Joomla.getOptions('mod_xbimages.vars');
+const { imgdelay } = Joomla.getOptions('mod_xbimages.vars');
 const { albuminfo } = Joomla.getOptions('mod_xbimages.vars');
 const { showyear } = Joomla.getOptions('mod_xbimages.vars');
 const { imgsource } = Joomla.getOptions('mod_xbimages.vars');
@@ -40,5 +40,5 @@ if (typeof ffile === 'undefined') {
 				document.getElementById('albumartist').innerText = cover[2];
 			}
 		}
-	}, delay*1000);
+	}, imgdelay*1000);
 }

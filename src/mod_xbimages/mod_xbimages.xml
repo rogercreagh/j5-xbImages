@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>xbImages Carousel</name>
-    <version>0.0.3.2</version>
+    <version>0.0.4.1</version>
 	<creationDate>18th February 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
@@ -20,6 +20,7 @@
     </files>
     <media destination="mod_xbimages" folder="media">
         <filename>joomla.asset.json</filename>
+        <folder>css</folder>
         <folder>js</folder>
         <folder>images</folder>
     </media>
@@ -44,6 +45,7 @@
                     name="img_source" type="radio"
                     label="Image Source"
                     description="Folder will select all images in the selected folder and subfolders. xbMusic will select all images from xbMusic Albums with optional filtering by Album tags"
+ 					class="btn-group"
                     default="0"
                     >
 						<option value="0">Folder</option>
@@ -72,6 +74,7 @@
 				<field name="albuminfo" type="radio"
 					label="Show Title &amp; Artist"
 					description="Optionally display album title and/or artist below the image"
+ 					class="btn-group btn-group-yesno"
 					default="0"
 					showon="img_source:1"
 				>
@@ -83,6 +86,7 @@
 				<field name="showyear" type="radio"
 					label="Show release year"
 					description="if title is showing also show release year"
+		 			class="btn-group btn-group-yesno"
 					default="0"
 					showon="albuminfo:1[OR]albuminfo:3"
 				>

@@ -47,17 +47,17 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
 //        $helper->doAdvancedTableOperations($this->module->id, $this->input);
         
         $params = new Registry($this->module->params);
-        $img_delay = $params->get('img_delay', 7 );
+        $imgdelay = $params->get('img_delay', 7 );
         $albuminfo = $params->get('albuminfo',0);
         $showyear = $params->get('showyear',0);
         $subtitle = $params->get('subtitle','');
-        $img_source = $params->get('img_source', 0 );
-        if ($img_source == 0) {
+        $imgsource = $params->get('img_source', 0 );
+        if ($imgsource == 0) {
             $img_folder = $params->get('img_folder', '' );
             $img_exts = $params->get('img_exts', 'jpg' );
             $img_exts = explode( ',', $img_exts);
             $covers = $helper->getFilesByExtension(JPATH_ROOT.'/images/'.$img_folder, $img_exts);
-        } elseif ($img_source == 1) {
+        } elseif ($imgsource == 1) {
             //check if xbmusic installed
             $albumtags = $params->get('albumtags', [] );
             $covers = $helper->getFilesFromXbmusic($albumtags);

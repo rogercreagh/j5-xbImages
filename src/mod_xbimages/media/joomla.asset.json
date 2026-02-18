@@ -1,11 +1,16 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
   "name": "mod_xbimages",
-  "version": "0.0.1.1",
-  "description": "XbMusic Alnum Cover Show",
+  "version": "0.0.4.1",
+  "description": "XbMusic Album Cover Carousel",
   "license": "GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html",
   "assets": [
     {
+		"name" : "xbimages.styles",
+		"description" : "xbImages custom css",
+		"type" : "style",
+		"uri" : "mod_xbimages/xbimages.css"
+	}, {
       "name": "mod_xbimages.new-cover",
       "type": "script",
       "uri": "mod_xbimages/new-cover.js",
@@ -15,7 +20,7 @@
       "attributes": {
         "type": "module"
       },
-      "version": "0.0.1.1"
+      "version": "0.0.4.1"
     } 
   ]
 }
