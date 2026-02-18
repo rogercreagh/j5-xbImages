@@ -2,7 +2,7 @@
 /*******
  * @package xbMusic
  * @filesource mod_xbimages/tmpl/default.php
- * @version 0.0.2.0 13th February 2026
+ * @version 0.0.3.2 18th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
@@ -18,21 +18,19 @@ $wa->useScript('mod_xbimages.new-cover');
 $document->addScriptOptions('mod_xbimages.vars', ['covers' => $covers,'delay' => $img_delay, 'albuminfo' => $albuminfo]);
 
 ?>
-
+<?php if($subtitle !='') :?>
+	<span class="xbimgsubtitle"><?php echo $subtitle; ?></span><br/>
+<?php endif; ?>
 <img id="coverimg" src="/media/mod_xbimages/images/WreckersCircleLogo-500x500.png" />
-<?php switch ($albuminfo) {
-    case 1:
-        echo '<span id="albumtitle"></span>';
-        break;
-    case 2:
-        echo '<span id="albumartist"></span>';
-        break;
-    case 3:
-        echo '<span id="albumtitle"></span><br />';
-        echo '<span id="albumartist"></span>';        
-        break;        
-    default:
-        
-    break;
-}
-?>
+<?php if(($albuminfo == 1) || ($albuminfo == 3)) : ?>
+	<span id="albumtitle"></span>
+	<?php if($showyear == 1) : ?>
+		<span id="relyear"></span>
+	<?php endif; ?>
+	<?php if ($albuminfo == 3) : ?>
+		<br />
+	<?php endif; ?>
+<?php endif; ?>
+<?php if($albuminfo > 1 ) :?>
+	<span id="albumartist"></span>
+<?php endif; ?>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>xbImages Carousel</name>
-    <version>0.0.3.0</version>
+    <version>0.0.3.2</version>
 	<creationDate>18th February 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
@@ -27,6 +27,11 @@
 		<inlinehelp button="show"/>
         <fields name="params">
             <fieldset name="basic">
+            	<field name="subtitle" type="text"
+            		label="Subtitle"
+            		description="Optional. Will appears above the image"
+            		hint="optional text above image"
+            	/>
             	<field name="img_delay" type="number"
             		label="Delay (secs)"
             		description="Second to display image before changing to next"
@@ -67,12 +72,22 @@
 				<field name="albuminfo" type="radio"
 					label="Show Title &amp; Artist"
 					description="Optionally display album title and/or artist below the image"
+					default="0"
 					showon="img_source:1"
 				>
 					<option value="0">None</option>
 					<option value="1">Title</option>
 					<option value="2">Artist</option>
 					<option value="3">Both</option>
+				</field>
+				<field name="showyear" type="radio"
+					label="Show release year"
+					description="if title is showing also show release year"
+					default="0"
+					showon="albuminfo:1[OR]albuminfo:3"
+				>
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
 				</field>
 				<field name="albumtags" type="tag"
 					label="Tags"

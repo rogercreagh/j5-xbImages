@@ -1,7 +1,7 @@
 /**
  * @package xbmusic
  * @filesource /media/mod_xbimages/js/new-cover.js
- * @version 0.0.2.1 15th February 2026
+ * @version 0.0.3.2 18th February 2026
  * @desc functions to auto details sections and prevent propogation of clicks
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -15,21 +15,30 @@ if (!window.Joomla) {
 const { covers } = Joomla.getOptions('mod_xbimages.vars');
 const { delay } = Joomla.getOptions('mod_xbimages.vars');
 const { albuminfo } = Joomla.getOptions('mod_xbimages.vars');
+const { showyear } = Joomla.getOptions('mod_xbimages.vars');
+const { imgsource } = Joomla.getOptions('mod_xbimages.vars');
 var n = covers.length;
 const first = covers[Math.floor(Math.random() * n)];
 var ffile = first[0];
-document.getElementById('coverimg').src = ffile;
-setInterval(function() {
-	var r = Math.floor(Math.random() * n);
-	const cover = covers[r];
-  	var fpath = cover[0];
-  	var tit = cover[1];
-  	var art = cover[2];
-    document.getElementById('coverimg').src = fpath;
-	if ((albuminfo==1) || (albuminfo==3)) {
-		document.getElementById('albumtitle').innerText = tit;
-	}
-	if (albuminfo > 1) {
-		document.getElementById('albumartist').innerText = art;
-	}
-}, delay*1000);
+if (typeof ffile === 'undefined') {
+	ffile = '/media/mod_xbimages/images/WreckersCircleLogo-500x500.png'
+	document.getElementById('coverimg').src = ffile;
+  } else {
+	document.getElementById('coverimg').src = ffile;
+	setInterval(function() {
+		var r = Math.floor(Math.random() * n);
+		const cover = covers[r];
+	  	var fpath = cover[0];
+		    document.getElementById('coverimg').src = fpath;
+			if (imgsource == 1) {
+			if ((albuminfo==1) || (albuminfo==3)) {
+				document.getElementById('albumtitle').innerText = cover[1];
+				if (showyear==1)
+					document.getElementById('relyear').innerText = "("+cover[3]+")";
+			}
+			if (albuminfo > 1) {
+				document.getElementById('albumartist').innerText = cover[2];
+			}
+		}
+	}, delay*1000);
+}
