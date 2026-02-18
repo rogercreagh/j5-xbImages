@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
-    <name>xbImages Carousel</name>
-    <version>0.0.4.1</version>
+    <name>MOD_XBIMG_NAME</name>
+    <version>0.0.5.0</version>
 	<creationDate>18th February 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
 	<authorUrl>www.crosborne.uk</authorUrl>
 	<copyright>Copyright (C) Roger Creagh-Osborne, 2025, All rights reserved.</copyright>
 	<license>GNU/GPL Version 3</license>
-	<description>Creates a single image carousel with configurable delay and images source</description>
+	<description>MOD_XBIMG_DESC</description>
 
 	<namespace path="src/">Crosborne\Module\Xbimages</namespace>
 
@@ -17,6 +17,7 @@
         <folder module="mod_xbimages">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
+        <folder>language</folder>
     </files>
     <media destination="mod_xbimages" folder="media">
         <filename>joomla.asset.json</filename>
@@ -29,13 +30,13 @@
         <fields name="params">
             <fieldset name="basic">
             	<field name="subtitle" type="text"
-            		label="Subtitle"
-            		description="Optional. Will appears above the image"
+            		label="MOD_XBIMG_SUBTITLE"
+            		description="MOD_XBIMG_SUBTITLE_DESC"
             		hint="optional text above image"
             	/>
             	<field name="img_delay" type="number"
-            		label="Delay (secs)"
-            		description="Second to display image before changing to next"
+            		label="MOD_XBIMG_DELAY"
+            		description="MOD_XBIMG_DELAY_DESC"
             		min="2" max="60" step="1"
             		hint="secs"
             		size="4"
@@ -43,17 +44,17 @@
             	/> 
                 <field
                     name="img_source" type="radio"
-                    label="Image Source"
-                    description="Folder will select all images in the selected folder and subfolders. xbMusic will select all images from xbMusic Albums with optional filtering by Album tags"
+                    label="MOD_XBIMG_SOURCE"
+                    description="MOD_XBIMG_SOURCE_DESC"
  					class="btn-group"
                     default="0"
                     >
-						<option value="0">Folder</option>
-						<option value="1">xbMusic</option>	
+						<option value="0">MOD_XBIMG_FOLDER</option>
+						<option value="1">MOD_XBIMG_XBMUSIC</option>	
                 </field>
                 <field name="img_folder" type="folderlist"
-			        label="Select a folder"
-			        description="All sub-folders of the selected folder will be scanned. Files must match one of the extensions specified below"
+			        label="MOD_XBIMG_IMGFOLDER"
+			        description="MOD_XBIMG_IMGFOLDER_DESC"
 			        directory="images"
 			        recursive="true"
 			        hide_none="true" hide_default="true"
@@ -61,41 +62,41 @@
 			        showon="img_source:0"
 				/>
 				<field name="img_exts" type="text"
-					label="File types to include"
-					description="specify the acceptable extensions in lower case separated by commas without the dot Case will be ignore so 'jpg' covers 'jpg' and 'JPG'"
+					label="MOD_XBIMG_FILETYPES"
+					description="MOD_XBIMG_FILETYPE_DESCS"
 					default="jpg,jpeg,png"
 					showon="img_source:0"
 				/>
 				<field name="albumsnote" type="note"
-					label="xbMusic component must be installed for this to work."
-					description="Images will be those used by Albums in the xbMusic database. If xbMusic is not installed no images will be found. You can optionally filter the albums by tag(s). If you select multiple tags then albums matching any of the selected tags will be used."
+					label="MOD_XBIMG_ALBUMNOTE"
+					description="MOD_XBIMG_ALBUMNOTE_DESC"
 					showon="img_source:1"
 				/>
 				<field name="albuminfo" type="radio"
-					label="Show Title &amp; Artist"
-					description="Optionally display album title and/or artist below the image"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
  					class="btn-group btn-group-yesno"
 					default="0"
 					showon="img_source:1"
 				>
-					<option value="0">None</option>
-					<option value="1">Title</option>
-					<option value="2">Artist</option>
-					<option value="3">Both</option>
+					<option value="0">MOD_XBIMG_NONE</option>
+					<option value="1">MOD_XBIMG_TITLE</option>
+					<option value="2">MOD_XBIMG_ARTIST</option>
+					<option value="3">MOD_XBIMG_BOTH</option>
 				</field>
 				<field name="showyear" type="radio"
-					label="Show release year"
-					description="if title is showing also show release year"
+					label="MOD_XBIMG_SHOWYEAR"
+					description="MOD_XBIMG_SHOWYEAR_DESC"
 		 			class="btn-group btn-group-yesno"
 					default="0"
 					showon="albuminfo:1[OR]albuminfo:3"
 				>
-					<option value="0">Hide</option>
-					<option value="1">Show</option>
+					<option value="0">MOD_XBIMG_HIDE</option>
+					<option value="1">MOD_XBIMG_SHOW</option>
 				</field>
 				<field name="albumtags" type="tag"
-					label="Tags"
-					description="Filter albums by selected tags"
+					label="MOD_XBIMG_TAGS"
+					description="MOD_XBIMG_TAGS_DESC"
 					mode="nested"
 					multiple="true"
 					showon="img_source:1"
