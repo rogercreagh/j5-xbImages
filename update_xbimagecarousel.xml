@@ -14,7 +14,7 @@
         <tags>
           <tag>rc</tag>
         </tags>
-        <sha256>99383a63eee8c473c2a7af67793fd1dc5fa5f3d770e97e7f1e7946d8e5379bc5</sha256>
+        <sha256>15f7573424d9609a303b4d5aa7372860cfe2f170e6a8a20e1e5b26fde9f23af0</sha256>
     	<changelogurl>http://j5.localhost/updateserver/changelog_xbimagecarousel.xml</changelogurl>
 	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml -->  
 		<maintainer>Roger C-O</maintainer>

@@ -27,7 +27,6 @@
     </media>
     
     <changelogurl>https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml</changelogurl>
-   <!--  http://j5.localhost/updateserver/changelog_xbimagecarousel.xml -->
     <updateservers>
 	    <server type="extension" name="xbImageCarousel Module Updates">
 	    	https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/update_xbimagecarousel.xml
