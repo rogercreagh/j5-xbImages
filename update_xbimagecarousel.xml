@@ -5,16 +5,16 @@
 		<description>Module for single image carousel</description>
 		<element>mod_xbimagecarousel</element>
 		<type>module</type>
-		<client>administrator</client>
-		<version>0.0.6.1</version>
+		<client>site</client>
+		<version>0.1.0.0</version>
 		<infourl>https://crosborne.uk/xbimagecarousel</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://crosborne.uk/downloads?download=29</downloadurl>
 		</downloads>
         <tags>
-          <tag>alpha</tag>
+          <tag>rc</tag>
         </tags>
-        <sha256>76f5a4548a5a56bdcac945bd78dcae7b956d006768e31bec9e2e425ce45f1b97</sha256>
+        <sha256>99383a63eee8c473c2a7af67793fd1dc5fa5f3d770e97e7f1e7946d8e5379bc5</sha256>
     	<changelogurl>http://j5.localhost/updateserver/changelog_xbimagecarousel.xml</changelogurl>
 	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml -->  
 		<maintainer>Roger C-O</maintainer>

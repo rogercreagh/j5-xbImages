@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
     <name>xbImage Carousel</name>
-    <version>0.0.6.0</version>
-	<creationDate>14th March 2026</creationDate>
+    <version>0.1.0.0</version>
+	<creationDate>15th March 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
 	<authorUrl>www.crosborne.uk</authorUrl>
@@ -26,15 +26,14 @@
         <folder>images</folder>
     </media>
     
-    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
-    <changelogurl>http://j5.localhost/updateserver/changelog_xbimagecarousel.xml</changelogurl>
-	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/changelog_xbimagecarousel.xml -->  
+    <changelogurl>https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml</changelogurl>
+   <!--  http://j5.localhost/updateserver/changelog_xbimagecarousel.xml -->
     <updateservers>
 	    <server type="extension" name="xbImageCarousel Module Updates">
-	    	http://j5.localhost/updateserver/update_xbimagecarousel.xml
+	    	https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/update_xbimagecarousel.xml
 	    </server>
 	</updateservers>
-			<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/update_xbimagecarousel.xml -->
+
     <config>
 		<inlinehelp button="show"/>
         <fields name="params">

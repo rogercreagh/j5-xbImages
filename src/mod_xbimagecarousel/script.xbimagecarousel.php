@@ -26,7 +26,7 @@ return new class () implements InstallerScriptInterface {
     protected $extname = 'xbImageCarousel';
     protected $extslug = 'xbimagecarousel';
     protected $ver = 'v1.2.3.4';
-    protected $date = '32nd January 2024';
+    protected $extdate = '32nd January 2024';
     protected $oldver = 'v1.2.3.4';
     protected $olddate = '32nd January 2024';
     
@@ -74,6 +74,7 @@ return new class () implements InstallerScriptInterface {
         $app = Factory::getApplication();
         $manifest = $adapter->getManifest();
         $ver = $manifest->version;
+        $this->extdate = $manifest->creationDate;
         $url = $manifest->changelogurl;
         $ext_mess = '<div style="position: relative; margin: 15px 15px 15px -15px; padding: 1rem; border:solid 1px #444; border-radius: 6px;">';
         if ($type == 'update') {
@@ -110,9 +111,9 @@ return new class () implements InstallerScriptInterface {
             $json = json_encode($xml);
             $changelog = json_decode($json,true);
             $log = 0;
-            if (array_key_exists('element',$changelog)) {
+            if (array_key_exists('element',$changelog['changelog'])) {
                 //only 1 changelog in file
-                $log = $changelog;
+                $log = $changelog['changelog'];
                 $newver = $log['version'];
                 if (version_compare($newver, $ver) !== 0) {
                     $output.= '<p style="color:red;">Changelog for v'.$ver.' not found. v'.$newver.' is only one available.</p>';
@@ -129,17 +130,9 @@ return new class () implements InstallerScriptInterface {
                 }
             }
             $output .= '<h4>Changelog for ';
-            
-            if (key_exists('title',$log)) {
-                $output .= $log['title'];
-                //               unset($log['title']);
-            } else {
-                $output .= $log['element'];
-            }
+            $output .= $this->extname;
             $output .= ' v'.$log['version'].' ';
-            if (key_exists('date',$log)) {
-                $output .= $log['date'];
-            }
+            $output .= $this->extdate;
             $output .= '</h4><hr />';
             
             $colours = array('security'=>'bg-danger', 'addition'=>'bg-success', 'fix'=>'bg-dark','language'=>'bg-primary',
