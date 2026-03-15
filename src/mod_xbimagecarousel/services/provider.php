@@ -1,7 +1,7 @@
 <?php
 /*******
  * @package xbMusic
- * @filesource mod_xbimages/services/provider.php
+ * @filesource mod_xbimagecarousel/services/provider.php
  * @version 0.0.1.0 12th February 2026
  * @since 12th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -20,8 +20,8 @@ return new class () implements ServiceProviderInterface {
 
     public function register(Container $container): void
     {
-        $container->registerServiceProvider(new ModuleDispatcherFactoryServiceProvider('\\Crosborne\\Module\\Xbimages'));
-        $container->registerServiceProvider(new HelperFactoryServiceProvider('\\Crosborne\\Module\\Xbimages\\Site\\Helper'));
+        $container->registerServiceProvider(new ModuleDispatcherFactoryServiceProvider('\\Crosborne\\Module\\XbimageCarousel'));
+        $container->registerServiceProvider(new HelperFactoryServiceProvider('\\Crosborne\\Module\\XbimageCarousel\\Site\\Helper'));
         $container->registerServiceProvider(new ModuleServiceProvider());
     }
 };

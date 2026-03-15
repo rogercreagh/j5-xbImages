@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
-    <name>MOD_XBIMG_NAME</name>
-    <version>0.0.5.0</version>
-	<creationDate>18th February 2026</creationDate>
+    <name>xbImage Carousel</name>
+    <version>0.0.6.0</version>
+	<creationDate>14th March 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
 	<authorUrl>www.crosborne.uk</authorUrl>
 	<copyright>Copyright (C) Roger Creagh-Osborne, 2025, All rights reserved.</copyright>
 	<license>GNU/GPL Version 3</license>
-	<description>MOD_XBIMG_DESC</description>
+	<description>Creates a single image carousel of images sourced from either any /images/ folder or the xbMusic Albums table</description>
 
-	<namespace path="src/">Crosborne\Module\Xbimages</namespace>
+	<namespace path="src/">Crosborne\Module\XbimageCarousel</namespace>
 
-	<scriptfile>script.xbimages.php</scriptfile>	
+	<scriptfile>script.xbimagecarousel.php</scriptfile>	
     <files>
-        <folder module="mod_xbimages">services</folder>
+        <folder module="mod_xbimagecarousel">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
         <folder>language</folder>
     </files>
-    <media destination="mod_xbimages" folder="media">
+    <media destination="mod_xbimagecarousel" folder="media">
         <filename>joomla.asset.json</filename>
         <folder>css</folder>
         <folder>js</folder>
         <folder>images</folder>
     </media>
+    
+    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
+    <changelogurl>http://j5.localhost/updateserver/changelog_xbimagecarousel.xml</changelogurl>
+	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/changelog_xbimagecarousel.xml -->  
+    <updateservers>
+	    <server type="extension" name="xbImageCarousel Module Updates">
+	    	http://j5.localhost/updateserver/update_xbimagecarousel.xml
+	    </server>
+	</updateservers>
+			<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/update_xbimagecarousel.xml -->
     <config>
 		<inlinehelp button="show"/>
         <fields name="params">

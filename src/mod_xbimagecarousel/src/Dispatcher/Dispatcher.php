@@ -1,13 +1,13 @@
 <?php
 /*******
  * @package xbMusic
- * @filesource mod_xbimages/services/provider.php
+ * @filesource mod_xbimagecarousel/services/provider.php
  * @version 0.0.3.2 18th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
 
-namespace Crosborne\Module\Xbimages\Site\Dispatcher;
+namespace Crosborne\Module\XbimageCarousel\Site\Dispatcher;
 
 \defined('_JEXEC') or die;
 
@@ -17,7 +17,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
-//use Crosborne\Module\Xbimages\Site\Helper\XbimagesHelper;
+//use Crosborne\Module\XbimageCarousel\Site\Helper\XbimageCarouselHelper;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 use Joomla\CMS\Factory;
@@ -40,9 +40,11 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
     public function dispatch()
     {
         
+        $language = Factory::getApplication()->getLanguage();
+        $language->load('mod_xbimagecarousel', JPATH_BASE . '/modules/mod_xbimagecarousel');
         // The default Joomla Factory classes set the Database object within the Helper class,
         // but not within the Dispatcher class, and we need the dbo for passing to the Table
-        $helper = $this->getHelperFactory()->getHelper('XbimagesHelper');
+        $helper = $this->getHelperFactory()->getHelper('XbimageCarouselHelper');
 //        $helper->doBasicTableOperations($this->module->id, $this->input);
 //        $helper->doAdvancedTableOperations($this->module->id, $this->input);
         
@@ -62,8 +64,7 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
             $albumtags = $params->get('albumtags', [] );
             $covers = $helper->getFilesFromXbmusic($albumtags);
         }
-        
-        
-        require ModuleHelper::getLayoutPath('mod_xbimages');
+                
+        require ModuleHelper::getLayoutPath('mod_xbimagecarousel');
    }
 }

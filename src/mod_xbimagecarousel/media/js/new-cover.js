@@ -1,7 +1,7 @@
 /**
  * @package xbmusic
- * @filesource /media/mod_xbimages/js/new-cover.js
- * @version 0.0.3.2 18th February 2026
+ * @filesource /media/mod_xbimagecarousel/js/new-cover.js
+ * @version 0.0.6.0 14th March 2026
  * @desc functions to auto details sections and prevent propogation of clicks
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -12,16 +12,16 @@ if (!window.Joomla) {
   throw new Error('Joomla API was not properly initialised');
 }
 
-const { covers } = Joomla.getOptions('mod_xbimages.vars');
-const { imgdelay } = Joomla.getOptions('mod_xbimages.vars');
-const { albuminfo } = Joomla.getOptions('mod_xbimages.vars');
-const { showyear } = Joomla.getOptions('mod_xbimages.vars');
-const { imgsource } = Joomla.getOptions('mod_xbimages.vars');
+const { covers } = Joomla.getOptions('mod_xbimagecarousel.vars');
+const { imgdelay } = Joomla.getOptions('mod_xbimagecarousel.vars');
+const { albuminfo } = Joomla.getOptions('mod_xbimagecarousel.vars');
+const { showyear } = Joomla.getOptions('mod_xbimagecarousel.vars');
+const { imgsource } = Joomla.getOptions('mod_xbimagecarousel.vars');
 var n = covers.length;
 const first = covers[Math.floor(Math.random() * n)];
 var ffile = first[0];
 if (typeof ffile === 'undefined') {
-	ffile = '/media/mod_xbimages/images/WreckersCircleLogo-500x500.png'
+	ffile = '/media/mod_xbimagecarousel/images/WreckersCircleLogo-500x500.png'
 	document.getElementById('coverimg').src = ffile;
   } else {
 	document.getElementById('coverimg').src = ffile;
@@ -33,7 +33,7 @@ if (typeof ffile === 'undefined') {
 			if (imgsource == 1) {
 			if ((albuminfo==1) || (albuminfo==3)) {
 				document.getElementById('albumtitle').innerText = cover[1];
-				if (showyear==1)
+				if ((showyear==1) && (cover[3]!=""))
 					document.getElementById('relyear').innerText = "("+cover[3]+")";
 			}
 			if (albuminfo > 1) {

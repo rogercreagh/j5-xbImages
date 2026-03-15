@@ -1,28 +1,35 @@
 /*******
- * @package xbImages
- * @filesource media/css/xbimages.css
- * @version xbimages 0.0.4.0 18th February 2026
+ * @package xbImageCarousel
+ * @filesource media/css/xbimagecarousel.css
+ * @version xbimagecarousel 0.0.4.0 18th February 2026
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
  
  .xbimgsubtitle {
- 	font-size : 0.9rem;
- 	font-style : italic;
+	font-size : 0.9rem;
+	font-style : italic;
  	margin-bottom: 5px;
- }
+}
  
- #albumtitle {
+#albumtitle {
  	font-weight : bold;
  	margin-bottom : 5px
- }
+}
  
- #relyear {
+#relyear {
  	font-size : 0.9rem;
- }
+}
  
- #albumartist {
+#albumartist {
  	margin : 0 auto;
  	text-align : center;
- }
+	font-size:1.1rem;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+
+ #coverimg {
+ 	width:100%;
+}

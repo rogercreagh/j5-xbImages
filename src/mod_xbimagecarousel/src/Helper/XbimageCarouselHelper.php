@@ -1,13 +1,13 @@
 <?php
 /*******
  * @package xbMusic
- * @filesource mod_xbimages/services/provider.php
+ * @filesource mod_xbimagecarousel/src/Helper/XbimageCarouselHelper.php
  * @version 0.0.3.2 18th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
 
-namespace Crosborne\Module\Xbimages\Site\Helper;
+namespace Crosborne\Module\XbimageCarousel\Site\Helper;
 
 \defined('_JEXEC') or die;
 
@@ -16,7 +16,7 @@ use Joomla\Database\DatabaseInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
-class XbimagesHelper
+class XbimageCarouselHelper
 {
     public static function getLoggedonUsername(string $default)
     {
@@ -56,6 +56,7 @@ class XbimagesHelper
         $query = $db->getQuery(true);
         $query->select('DISTINCT a.imgurl, a.title, a.sortartist, a.rel_date');
         $query->from('#__xbmusic_albums AS a');
+        $query->where($db->qn('a.imgurl')." != '' " );
         //add album tag filter by any selected tag
         $tagfilt = $albumtags;
         $subquery = '(SELECT tmap.tag_id AS tlist FROM #__contentitem_tag_map AS tmap
