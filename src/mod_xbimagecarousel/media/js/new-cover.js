@@ -1,7 +1,7 @@
 /**
  * @package xbmusic
  * @filesource /media/mod_xbimagecarousel/js/new-cover.js
- * @version 0.0.6.0 14th March 2026
+ * @version 0.1.0.1 16th March 2026
  * @desc functions to auto details sections and prevent propogation of clicks
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -33,7 +33,7 @@ if (typeof ffile === 'undefined') {
 			if (imgsource == 1) {
 			if ((albuminfo==1) || (albuminfo==3)) {
 				document.getElementById('albumtitle').innerText = cover[1];
-				if ((showyear==1) && (cover[3]!=""))
+				if ((showyear==1) && (cover[3] != null))
 					document.getElementById('relyear').innerText = "("+cover[3]+")";
 			}
 			if (albuminfo > 1) {

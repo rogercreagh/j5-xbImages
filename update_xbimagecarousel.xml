@@ -6,7 +6,7 @@
 		<element>mod_xbimagecarousel</element>
 		<type>module</type>
 		<client>site</client>
-		<version>0.1.0.0</version>
+		<version>0.1.0.1</version>
 		<infourl>https://crosborne.uk/xbimagecarousel</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://crosborne.uk/downloads?download=29</downloadurl>
@@ -14,7 +14,7 @@
         <tags>
           <tag>rc</tag>
         </tags>
-        <sha256>15f7573424d9609a303b4d5aa7372860cfe2f170e6a8a20e1e5b26fde9f23af0</sha256>
+        <sha256>5d921bf37c7f415603c6fb6c7e8d8e4ea07addfb92e62ce38478759e48049999</sha256>
     	<changelogurl>http://j5.localhost/updateserver/changelog_xbimagecarousel.xml</changelogurl>
 	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml -->  
 		<maintainer>Roger C-O</maintainer>
